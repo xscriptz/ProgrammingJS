@@ -1,0 +1,900 @@
+{
+    "nodes": [{
+        "name": "Bears",
+        "group": 0
+    }, {
+        "name": "Bengals",
+        "group": 1
+    }, {
+        "name": "Bills",
+        "group": 2
+    }, {
+        "name": "Broncos",
+        "group": 3
+    }, {
+        "name": "Browns",
+        "group": 4
+    }, {
+        "name": "Buccaneers",
+        "group": 5
+    }, {
+        "name": "Colts",
+        "group": 6
+    }, {
+        "name": "Cardinals",
+        "group": 7
+    }, {
+        "name": "Chargers",
+        "group": 8
+    }, {
+        "name": "Chiefs",
+        "group": 9
+    }, {
+        "name": "Cowboys",
+        "group": 10
+    }, {
+        "name": "Dolphins",
+        "group": 11
+    }, {
+        "name": "Eagles",
+        "group": 12
+    }, {
+        "name": "Falcons",
+        "group": 13
+    }, {
+        "name": "Giants",
+        "group": 14
+    }, {
+        "name": "Jaguars",
+        "group": 15
+    }, {
+        "name": "Jets",
+        "group": 16
+    }, {
+        "name": "Lions",
+        "group": 17
+    }, {
+        "name": "Packers",
+        "group": 18
+    }, {
+        "name": "Panthers",
+        "group": 19
+    }, {
+        "name": "Patriots",
+        "group": 20
+    }, {
+        "name": "Redskins",
+        "group": 21
+    }, {
+        "name": "Raiders",
+        "group": 22
+    }, {
+        "name": "Rams",
+        "group": 23
+    }, {
+        "name": "Ravens",
+        "group": 24
+    }, {
+        "name": "Saints",
+        "group": 25
+    }, {
+        "name": "Seahawks",
+        "group": 26
+    }, {
+        "name": "Steelers",
+        "group": 27
+    }, {
+        "name": "Texans",
+        "group": 28
+    }, {
+        "name": "Titans",
+        "group": 29
+    }, {
+        "name": "Vikings",
+        "group": 30
+    }, {
+        "name": "49ers",
+        "group": 31
+    }],
+    "links": [{
+        "source": 27,
+        "target": 20,
+        "score1": 21,"value": 20,
+        "score2": 28
+    }, {
+        "source": 18,
+        "target": 0,
+        "score1": 31,"value": 18,
+        "score2": 23
+    }, {
+        "source": 9,
+        "target": 28,
+        "score1": 27,"value": 19,
+        "score2": 20
+    }, {
+        "source": 4,
+        "target": 16,
+        "score1": 10,"value":17 ,
+        "score2": 31
+    }, {
+        "source": 6,
+        "target": 2,
+        "score1": 14,"value": 2,
+        "score2": 27
+    }, {
+        "source": 11,
+        "target": 21,
+        "score1": 17,"value": 11,
+        "score2": 10
+    }, {
+        "source": 19,
+        "target": 15,
+        "score1": 20,"value": 19,
+        "score2": 9
+    }, {
+        "source": 26,
+        "target": 23,
+        "score1": 31,"value": 23,
+        "score2": 34
+    }, {
+        "source": 25,
+        "target": 7,
+        "score1": 19,"value": 7,
+        "score2": 31
+    }, {
+        "source": 17,
+        "target": 8,
+        "score1": 28,"value": 8,
+        "score2": 33
+    }, {
+        "source": 29,
+        "target": 5,
+        "score1": 42,"value": 29,
+        "score2": 14
+    }, {
+        "source": 1,
+        "target": 22,
+        "score1": 33,"value": 1,
+        "score2": 13
+    }, {
+        "source": 24,
+        "target": 3,
+        "score1": 13,"value": 3,
+        "score2": 19
+    }, {
+        "source": 14,
+        "target": 10,
+        "score1": 26,"value": 10,
+        "score2": 27
+    }, {
+        "source": 12,
+        "target": 13,
+        "score1": 24,"value": 13,
+        "score2": 26
+    }, {
+        "source": 30,
+        "target": 31,
+        "score1": 3,"value": 31,
+        "score2": 20
+    }, {
+        "source": 3,
+        "target": 9,
+        "score1": 31,"value": 3,
+        "score2": 24
+    }, {
+        "source": 28,
+        "target": 19,
+        "score1": 17,"value": 19,
+        "score2": 24
+    }, {
+        "source": 31,
+        "target": 27,
+        "score1": 18,"value": 27,
+        "score2": 43
+    }, {
+        "source": 5,
+        "target": 25,
+        "score1": 26,"value": 5,
+        "score2": 19
+    }, {
+        "source": 17,
+        "target": 30,
+        "score1": 16,"value": 30,
+        "score2": 26
+    }, {
+        "source": 7,
+        "target": 0,
+        "score1": 48,"value": 7,
+        "score2": 23
+    }, {
+        "source": 20,
+        "target": 2,
+        "score1": 40,"value": 20,
+        "score2": 32
+    }, {
+        "source": 8,
+        "target": 1,
+        "score1": 19,"value": 1,
+        "score2": 24
+    }, {
+        "source": 29,
+        "target": 4,
+        "score1": 14,"value": 4,
+        "score2": 28
+    }, {
+        "source": 13,
+        "target": 14,
+        "score1": 24,"value": 13,
+        "score2": 20
+    }, {
+        "source": 23,
+        "target": 21,
+        "score1": 10,"value": 21,
+        "score2": 24
+    }, {
+        "source": 11,
+        "target": 15,
+        "score1": 20,"value": 15,
+        "score2": 23
+    }, {
+        "source": 24,
+        "target": 22,
+        "score1": 33,"value": 22,
+        "score2": 37
+    }, {
+        "source": 10,
+        "target": 12,
+        "score1": 20,"value": 10,
+        "score2": 10
+    }, {
+        "source": 26,
+        "target": 18,
+        "score1": 17,"value": 18,
+        "score2": 27
+    }, {
+        "source": 16,
+        "target": 6,
+        "score1": 20,"value": 16,
+        "score2": 7
+    }, {
+        "source": 21,
+        "target": 14,
+        "score1": 21,"value": 14,
+        "score2": 32
+    }, {
+        "source": 13,
+        "target": 10,
+        "score1": 39,"value": 13,
+        "score2": 28
+    }, {
+        "source": 6,
+        "target": 29,
+        "score1": 35,"value": 6,
+        "score2": 33
+    }, {
+        "source": 22,
+        "target": 4,
+        "score1": 27,"value": 22,
+        "score2": 20
+    }, {
+        "source": 1,
+        "target": 24,
+        "score1": 28,"value": 1,
+        "score2": 24
+    }, {
+        "source": 15,
+        "target": 20,
+        "score1": 17,"value": 20,
+        "score2": 51
+    }, {
+        "source": 25,
+        "target": 19,
+        "score1": 22,"value": 19,
+        "score2": 27
+    }, {
+        "source": 12,
+        "target": 16,
+        "score1": 24,"value": 12,
+        "score2": 17
+    }, {
+        "source": 5,
+        "target": 28,
+        "score1": 9,"value": 28,
+        "score2": 19
+    }, {
+        "source": 8,
+        "target": 30,
+        "score1": 14,"value": 30,
+        "score2": 31
+    }, {
+        "source": 27,
+        "target": 23,
+        "score1": 12,"value": 27,
+        "score2": 6
+    }, {
+        "source": 31,
+        "target": 7,
+        "score1": 7,"value": 7,
+        "score2": 47
+    }, {
+        "source": 2,
+        "target": 11,
+        "score1": 41,"value": 2,
+        "score2": 14
+    }, {
+        "source": 0,
+        "target": 26,
+        "score1": 0,"value": 26,
+        "score2": 26
+    }, {
+        "source": 3,
+        "target": 17,
+        "score1": 24,"value": 3,
+        "score2": 12
+    }, {
+        "source": 9,
+        "target": 18,
+        "score1": 28,"value": 18,
+        "score2": 38
+    }, {
+        "source": 24,
+        "target": 27,
+        "score1": 23,"value": 24,
+        "score2": 20
+    }, {
+        "source": 16,
+        "target": 11,
+        "score1": 27,"value": 16,
+        "score2": 14
+    }, {
+        "source": 15,
+        "target": 6,
+        "score1": 13,"value": 6,
+        "score2": 16
+    }, {
+        "source": 14,
+        "target": 2,
+        "score1": 24,"value": 14,
+        "score2": 10
+    }, {
+        "source": 19,
+        "target": 5,
+        "score1": 37,"value": 19,
+        "score2": 23
+    }, {
+        "source": 12,
+        "target": 21,
+        "score1": 20,"value": 21,
+        "score2": 23
+    }, {
+        "source": 22,
+        "target": 0,
+        "score1": 20,"value": 0,
+        "score2": 22
+    }, {
+        "source": 28,
+        "target": 13,
+        "score1": 21,"value": 13,
+        "score2": 48
+    }, {
+        "source": 9,
+        "target": 1,
+        "score1": 21,"value": 1,
+        "score2": 36
+    }, {
+        "source": 4,
+        "target": 8,
+        "score1": 27,"value": 8,
+        "score2": 30
+    }, {
+        "source": 18,
+        "target": 31,
+        "score1": 17,"value": 18,
+        "score2": 3
+    }, {
+        "source": 23,
+        "target": 7,
+        "score1": 24,"value": 23,
+        "score2": 22
+    }, {
+        "source": 30,
+        "target": 3,
+        "score1": 20,"value": 3,
+        "score2": 23
+    }, {
+        "source": 10,
+        "target": 25,
+        "score1": 20,"value": 25,
+        "score2": 26
+    }, {
+        "source": 17,
+        "target": 26,
+        "score1": 10,"value": 26,
+        "score2": 13
+    }, {
+        "source": 6,
+        "target": 28,
+        "score1": 27,"value": 6,
+        "score2": 20
+    }, {
+        "source": 0,
+        "target": 9,
+        "score1": 18,"value": 0,
+        "score2": 17
+    }, {
+        "source": 26,
+        "target": 1,
+        "score1": 24,"value": 1,
+        "score2": 27
+    }, {
+        "source": 21,
+        "target": 13,
+        "score1": 19,"value": 13,
+        "score2": 25
+    }, {
+        "source": 15,
+        "target": 5,
+        "score1": 31,"value": 5,
+        "score2": 38
+    }, {
+        "source": 25,
+        "target": 12,
+        "score1": 17,"value": 12,
+        "score2": 39
+    }, {
+        "source": 4,
+        "target": 24,
+        "score1": 33,"value": 4,
+        "score2": 30
+    }, {
+        "source": 23,
+        "target": 18,
+        "score1": 10,"value": 18,
+        "score2": 24
+    }, {
+        "source": 2,
+        "target": 29,
+        "score1": 14,"value": 2,
+        "score2": 13
+    }, {
+        "source": 7,
+        "target": 17,
+        "score1": 42,"value": 7,
+        "score2": 17
+    }, {
+        "source": 20,
+        "target": 10,
+        "score1": 30,"value": 20,
+        "score2": 6
+    }, {
+        "source": 3,
+        "target": 22,
+        "score1": 16,"value": 3,
+        "score2": 10
+    }, {
+        "source": 31,
+        "target": 14,
+        "score1": 27,"value": 14,
+        "score2": 30
+    }, {
+        "source": 27,
+        "target": 8,
+        "score1": 24,"value": 27,
+        "score2": 20
+    }, {
+        "source": 13,
+        "target": 25,
+        "score1": 21,"value": 25,
+        "score2": 31
+    }, {
+        "source": 21,
+        "target": 16,
+        "score1": 20,"value": 16,
+        "score2": 34
+    }, {
+        "source": 7,
+        "target": 27,
+        "score1": 13,"value": 27,
+        "score2": 25
+    }, {
+        "source": 9,
+        "target": 30,
+        "score1": 10,"value": 30,
+        "score2": 16
+    }, {
+        "source": 1,
+        "target": 2,
+        "score1": 34,"value": 1,
+        "score2": 21
+    }, {
+        "source": 0,
+        "target": 17,
+        "score1": 34,"value": 17,
+        "score2": 37
+    }, {
+        "source": 3,
+        "target": 4,
+        "score1": 26,"value": 3,
+        "score2": 23
+    }, {
+        "source": 28,
+        "target": 15,
+        "score1": 31,"value": 28,
+        "score2": 20
+    }, {
+        "source": 11,
+        "target": 29,
+        "score1": 38,"value": 11,
+        "score2": 10
+    }, {
+        "source": 19,
+        "target": 26,
+        "score1": 27,"value": 19,
+        "score2": 23
+    }, {
+        "source": 8,
+        "target": 18,
+        "score1": 20,"value": 18,
+        "score2": 27
+    }, {
+        "source": 24,
+        "target": 31,
+        "score1": 20,"value": 31,
+        "score2": 25
+    }, {
+        "source": 20,
+        "target": 6,
+        "score1": 34,"value": 20,
+        "score2": 27
+    }, {
+        "source": 14,
+        "target": 12,
+        "score1": 7,"value": 12,
+        "score2": 27
+    }, {
+        "source": 26,
+        "target": 31,
+        "score1": 20,"value": 26,
+        "score2": 3
+    }, {
+        "source": 2,
+        "target": 15,
+        "score1": 31,"value": 15,
+        "score2": 34
+    }, {
+        "source": 5,
+        "target": 21,
+        "score1": 30,"value": 5,
+        "score2": 1
+    }, {
+        "source": 13,
+        "target": 29,
+        "score1": 10,"value": 13,
+        "score2": 7
+    }, {
+        "source": 25,
+        "target": 6,
+        "score1": 27,"value": 25,
+        "score2": 21
+    }, {
+        "source": 30,
+        "target": 17,
+        "score1": 28,"value": 30,
+        "score2": 19
+    }, {
+        "source": 27,
+        "target": 9,
+        "score1": 13,"value": 9,
+        "score2": 23
+    }, {
+        "source": 4,
+        "target": 23,
+        "score1": 6,"value": 23,
+        "score2": 24
+    }, {
+        "source": 28,
+        "target": 11,
+        "score1": 26,"value": 11,
+        "score2": 44
+    }, {
+        "source": 16,
+        "target": 20,
+        "score1": 23,"value": 20,
+        "score2": 30
+    }, {
+        "source": 22,
+        "target": 8,
+        "score1": 37,"value": 22,
+        "score2": 29
+    }, {
+        "source": 10,
+        "target": 14,
+        "score1": 20,"value": 14,
+        "score2": 27
+    }, {
+        "source": 12,
+        "target": 19,
+        "score1": 16,"value": 19,
+        "score2": 27
+    }, {
+        "source": 24,
+        "target": 7,
+        "score1": 18,"value": 7,
+        "score2": 26
+    }, {
+        "source": 11,
+        "target": 20,
+        "score1": 7,"value": 20,
+        "score2": 36
+    }, {
+        "source": 17,
+        "target": 9,
+        "score1": 10,"value": 9,
+        "score2": 45
+    }, {
+        "source": 5,
+        "target": 13,
+        "score1": 23,"value": 5,
+        "score2": 20
+    }, {
+        "source": 7,
+        "target": 4,
+        "score1": 34,"value": 7,
+        "score2": 20
+    }, {
+        "source": 31,
+        "target": 23,
+        "score1": 6,"value": 23,
+        "score2": 27
+    }, {
+        "source": 14,
+        "target": 25,
+        "score1": 49,"value": 25,
+        "score2": 52
+    }, {
+        "source": 30,
+        "target": 0,
+        "score1": 23,"value": 30,
+        "score2": 20
+    }, {
+        "source": 8,
+        "target": 24,
+        "score1": 26,"value": 24,
+        "score2": 29
+    }, {
+        "source": 1,
+        "target": 27,
+        "score1": 16,"value": 1,
+        "score2": 10
+    }, {
+        "source": 29,
+        "target": 28,
+        "score1": 6,"value": 28,
+        "score2": 20
+    }, {
+        "source": 16,
+        "target": 22,
+        "score1": 20,"value": 22,
+        "score2": 34
+    }, {
+        "source": 26,
+        "target": 10,
+        "score1": 13,"value": 26,
+        "score2": 12
+    }, {
+        "source": 18,
+        "target": 3,
+        "score1": 10,"value": 3,
+        "score2": 29
+    }, {
+        "source": 6,
+        "target": 19,
+        "score1": 26,"value": 19,
+        "score2": 29
+    }, {
+        "source": 4,
+        "target": 1,
+        "score1": 10,"value": 1,
+        "score2": 31
+    }, {
+        "source": 18,
+        "target": 19,
+        "score1": 29,"value": 19,
+        "score2": 37
+    }, {
+        "source": 21,
+        "target": 20,
+        "score1": 10,"value": 20,
+        "score2": 27
+    }, {
+        "source": 29,
+        "target": 25,
+        "score1": 34,"value": 29,
+        "score2": 28
+    }, {
+        "source": 11,
+        "target": 2,
+        "score1": 17,"value": 2,
+        "score2": 33
+    }, {
+        "source": 23,
+        "target": 30,
+        "score1": 18,"value": 30,
+        "score2": 21
+    }, {
+        "source": 15,
+        "target": 16,
+        "score1": 23,"value": 16,
+        "score2": 28
+    }, {
+        "source": 22,
+        "target": 27,
+        "score1": 35,"value": 27,
+        "score2": 38
+    }, {
+        "source": 14,
+        "target": 5,
+        "score1": 32,"value": 14,
+        "score2": 18
+    }, {
+        "source": 13,
+        "target": 31,
+        "score1": 16,"value": 31,
+        "score2": 17
+    }, {
+        "source": 3,
+        "target": 6,
+        "score1": 24,"value": 6,
+        "score2": 27
+    }, {
+        "source": 12,
+        "target": 10,
+        "score1": 33,"value": 12,
+        "score2": 27
+    }, {
+        "source": 0,
+        "target": 8,
+        "score1": 22,"value": 0,
+        "score2": 19
+    }, {
+        "source": 2,
+        "target": 16,
+        "score1": 22,"value": 2,
+        "score2": 17
+    }, {
+        "source": 17,
+        "target": 18,
+        "score1": 18,"value": 17,
+        "score2": 16
+    }, {
+        "source": 10,
+        "target": 5,
+        "score1": 6,"value": 5,
+        "score2": 10
+    }, {
+        "source": 19,
+        "target": 29,
+        "score1": 27,"value": 19,
+        "score2": 10
+    }, {
+        "source": 0,
+        "target": 23,
+        "score1": 37,"value": 0,
+        "score2": 13
+    }, {
+        "source": 25,
+        "target": 21,
+        "score1": 14,"value": 21,
+        "score2": 47
+    }, {
+        "source": 11,
+        "target": 12,
+        "score1": 20,"value": 11,
+        "score2": 19
+    }, {
+        "source": 4,
+        "target": 27,
+        "score1": 9,"value": 27,
+        "score2": 30
+    }, {
+        "source": 15,
+        "target": 24,
+        "score1": 22,"value": 15,
+        "score2": 20
+    }, {
+        "source": 30,
+        "target": 22,
+        "score1": 30,"value": 30,
+        "score2": 14
+    }, {
+        "source": 20,
+        "target": 14,
+        "score1": 27,"value": 20,
+        "score2": 26
+    }, {
+        "source": 9,
+        "target": 3,
+        "score1": 29,"value": 9,
+        "score2": 13
+    }, {
+        "source": 7,
+        "target": 26,
+        "score1": 39,"value": 7,
+        "score2": 32
+    }, {
+        "source": 28,
+        "target": 1,
+        "score1": 10,"value": 28,
+        "score2": 6
+    }, {
+        "source": 29,
+        "target": 15,
+        "score1": 13,"value": 15,
+        "score2": 19
+    }, {
+        "source": 22,
+        "target": 17,
+        "score1": 13,"value": 17,
+        "score2": 18
+    }, {
+        "source": 6,
+        "target": 13,
+        "score1": 24,"value": 6,
+        "score2": 21
+    }, {
+        "source": 23,
+        "target": 24,
+        "score1": 13,"value": 24,
+        "score2": 16
+    }, {
+        "source": 5,
+        "target": 12,
+        "score1": 45,"value": 5,
+        "score2": 17
+    }, {
+        "source": 3,
+        "target": 0,
+        "score1": 17,"value": 3,
+        "score2": 15
+    }, {
+        "source": 16,
+        "target": 28,
+        "score1": 17,"value": 28,
+        "score2": 24
+    }, {
+        "source": 21,
+        "target": 19,
+        "score1": 16,"value": 19,
+        "score2": 44
+    }, {
+        "source": 10,
+        "target": 11,
+        "score1": 24,"value": 10,
+        "score2": 14
+    }, {
+        "source": 9,
+        "target": 8,
+        "score1": 33,"value": 9,
+        "score2": 3
+    }, {
+        "source": 18,
+        "target": 30,
+        "score1": 30,"value": 18,
+        "score2": 13
+    }, {
+        "source": 31,
+        "target": 26,
+        "score1": 13,"value": 26,
+        "score2": 29
+    }, {
+        "source": 1,
+        "target": 7,
+        "score1": 31,"value": 7,
+        "score2": 34
+    }, {
+        "source": 2,
+        "target": 20,
+        "score1": 13,"value": 20,
+        "score2": 20
+    }]
+}

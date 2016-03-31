@@ -33,8 +33,38 @@ text {
   text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff;
 }
 
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
+
 </style>
 <script src="d3.min.js"></script>
+<script src="d3tip.js"></script>
 <script src="data.js"></script>
 </head>
 <body>
@@ -161,9 +191,28 @@ var force = d3.layout.force()
     .links(links)
     .size([width, height])
     .linkDistance(60)
-    .charge(-5500)
+    .charge(-7500)
     .on("tick", tick)
     .start();
+    
+//tool tip 
+var tooltip = d3.select("body")
+  .append("div")
+  .style("position", "absolute")
+  .style("z-index", "10")
+  .style("visibility", "hidden")
+  .style("width", "60px")		
+  .style("height", "28px")
+  .style("padding", "2px")					
+  .style("font", "20px sans-serif")	
+  .style("background", "orange")
+  .style("border", "0px")
+  .style("border-radius", "8px")
+  .text("a simple tooltip");
+
+
+
+  
 //console.log(force.nodes());
 var svg = d3.select("body").append("svg")
     .attr("width", width)
@@ -182,11 +231,26 @@ svg.append("defs").selectAll("marker")
   .append("svg:path")
     .attr("d", "M0,-5L10,0L0,5");
 
+
 var path = svg.append("g").selectAll("path")
     .data(force.links())
   .enter().append("svg:path")
     .attr("class", function(d) { return "link " + d.type; })
     .attr("marker-end", "url(#end)");
+path.on("mouseover", function(d) {
+	//console.log(d.fscore);
+    tooltip.text(d.fscore);
+    return tooltip.style("visibility", "visible");
+  })
+  .on("mousemove", function(d) {
+  tooltip.text(d.fscore + "-" + d.sscore);
+    return tooltip.style("top",
+      (d3.event.pageY - 10) + "px").style("left", (d3.event.pageX + 10) + "px");
+  })
+  .on("mouseout", function() {
+    return tooltip.style("visibility", "hidden");
+  });  
+
 
 var circle = svg.append("g").selectAll("circle")
     .data(force.nodes())
@@ -194,7 +258,7 @@ var circle = svg.append("g").selectAll("circle")
   .attr("id",function(d){return d.name;})
   	.style("fill", function(d,i) { return color(i); })
     .attr("r", 10)
-    .call(force.drag);
+    .call(force.drag);  
     
 
 	

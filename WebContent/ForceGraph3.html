@@ -1,98 +1,335 @@
 <!DOCTYPE html>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<html lang="en">
-<html>
-  <head>
-  <script
-      type="text/javascript"
-      src="http://d3js.org/d3.v3.min.js">
-  </script>
-  <script
-      type="text/javascript"
-      src="http://d3js.org/queue.v1.min.js"> 
-  </script>
+<meta charset="utf-8">
+<head>
+<style>
+
+.link {
+  fill: none;
+  stroke: #666;
+}
+
+#licensing {
+  fill: green;
+}
+
+.link.licensing {
+  stroke: green;
+}
+
+.link.resolved {
+  stroke-dasharray: 0,2 1;
+}
+
+circle {
+  fill: #ccc;
+  stroke: #AED6F1;
+  stroke-width: 1.5px;
+}
+
+text {
+  font: 10px sans-serif;
+  pointer-events: none;
+  text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff;
+}
+
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
+
+</style>
+<script src="d3.min.js"></script>
+<script src="d3tip.js"></script>
+<script src="data.js"></script>
 </head>
 <body>
-<script type="text/javascript">
- 
-/* Set the diagrams Height & Width */
-    var h = 500, w = 950;
-/* Set the color scale we want to use */
-    var color = d3.scale.category20();
-/* Establish/instantiate an SVG container object */
-    var svg = d3.select("body")
-                    .append("svg")
-                    .attr("height",h)
-                    .attr("width",w);
-/* Build the directional arrows for the links/edges */
-        svg.append("svg:defs")
-                    .selectAll("marker")
-                    .data(["end"]) 
-                    .enter().append("svg:marker")
-                    .attr("id", String)
-                    .attr("viewBox", "0 -5 10 10")
-                    .attr("refX", 15)
-                    .attr("refY", -1.5)
-                    .attr("markerWidth", 6)
-                    .attr("markerHeight", 6)
-                    .attr("orient", "auto")
-                    .append("svg:path")
-                    .attr("d", "M0,-5L10,0L0,5");
-/* Pre-Load the json data using the queue library */
-queue()
-    .defer(d3.json, "nodes.json")
-    .defer(d3.json, "links.json")
-    .await(makeDiag); 
-/* Define the main worker or execution function */
-function makeDiag(error, nodes, links, table) {
-    /* Draw the node labels first */
-   var texts = svg.selectAll("text")
-                    .data(nodes)
-                    .enter()
-                    .append("text")
-                    .attr("fill", "black")
-                    .attr("font-family", "sans-serif")
-                    .attr("font-size", "10px")
-                    .text(function(d) { return d.name; }); 
-    /* Establish the dynamic force behavor of the nodes */
-    var force = d3.layout.force()
-                    .nodes(nodes)
-                    .links(links)
-                    .size([w,h])
-                    .linkDistance([250])
-                    .charge([-1500])
-                    .gravity(0.3)
-                    .start();
-    /* Draw the edges/links between the nodes */
-    var edges = svg.selectAll("line")
-                    .data(links)
-                    .enter()
-                    .append("line")
-                    .style("stroke", "#ccc")
-                    .style("stroke-width", 1)
-                    .attr("marker-end", "url(#end)");
-    /* Draw the nodes themselves */                
-    var nodes = svg.selectAll("circle")
-                    .data(nodes)
-                    .enter()
-                    .append("circle")
-                    .attr("r", 20)
-                    .attr("opacity", 0.5)
-                    .style("fill", function(d,i) { return color(i); })
-                    .call(force.drag);
-    /* Run the Force effect */
-    force.on("tick", function() {
-               edges.attr("x1", function(d) { return d.source.x; })
-                    .attr("y1", function(d) { return d.source.y; })
-                    .attr("x2", function(d) { return d.target.x; })
-                    .attr("y2", function(d) { return d.target.y; });
-               nodes.attr("cx", function(d) { return d.x; })
-                    .attr("cy", function(d) { return d.y; })
-               texts.attr("transform", function(d) {
-                        return "translate(" + d.x + "," + d.y + ")";
-                        });
-               }); // End tick func
-}; // End makeDiag worker func
+
+<script>
+
+
+for (var i=0; i<links.length; i++) {
+    if (i != 0 &&
+        links[i].source == links[i-1].source &&
+        links[i].target == links[i-1].target) {
+            links[i].linknum = links[i-1].linknum + 1;
+        }
+    else {links[i].linknum = 1;};
+};
+var nodes = {};
+var width = 1000,
+height = 750,
+color = d3.scale.ordinal()
+	.range(["#2B1B17","#E5E4E2","#566D7E","#4863A0","#000080","#357EC7","#38ACEC","#EBF4FA","#00FFFF","#3B9C9C","#78866B","#B2C248","#EDDA74","#92C7C7","#FFFF00","#FFF8DC","#EAC117","#FFCBA4","#835C3B","#C36241","#E67451","#9F000F","#7E354D","#E8ADAA","#461B7E","#A52A2A","#800000","#808000","#ADD8E6","#0000A0","#0000FF","#FF0000"])
+var colorObject = {
+	"Steelers":"#2B1B17"
+,
+
+	"Patriots":"#E5E4E2"
+,
+
+	"Packers":"#566D7E"
+,
+
+	"Bears":"#4863A0"
+,
+
+	"Chiefs":"#000080"
+,
+
+	"Texans":"#357EC7"
+,
+
+	"Browns":"#38ACEC"
+,
+
+	"Jets":"#EBF4FA"
+,
+
+	"Colts":"#00FFFF"
+,
+
+	"Bills":"#3B9C9C"
+,
+
+	"Dolphins":"#78866B"
+,
+
+	"Redskins":"#B2C248"
+,
+
+	"Panthers":"#EDDA74"
+,
+
+	"Jaguars":"#92C7C7"
+,
+
+	"Seahawks":"#FFFF00"
+,
+
+	"Rams":"#FFF8DC"
+,
+
+	"Saints":"#EAC117"
+,
+
+	"Cardinals":"#FFCBA4"
+,
+
+	"Lions":"#835C3B"
+,
+
+	"Chargers":"#C36241"
+,
+
+	"Titans":"#C36241"
+,
+
+	"Buccaneers":"#E67451"
+,
+
+	"Bengals":"#9F000F"
+,
+
+	"Raiders":"#7E354D"
+,
+
+	"Ravens":"#E8ADAA"
+,
+
+	"Broncos":"#461B7E"
+,
+
+	"Giants":"#A52A2A"
+,
+
+	"Cowboys":"#800000"
+,
+
+	"Eagles":"#808000"
+,
+
+	"Falcons":"#ADD8E6"
+,
+
+	"Vikings":"#0000A0"
+,
+
+	"49ers":"#0000FF"
+
+};
+links.forEach(function(link,i) {
+  link.source = nodes[link.source] || (nodes[link.source] = {name: link.source});
+  link.target = nodes[link.target] || (nodes[link.target] = {name: link.target});
+});
+
+
+var force = d3.layout.force()
+    .nodes(d3.values(nodes))
+    .links(links)
+    .size([width, height])
+    .linkDistance(60)
+    .charge(-7500)
+    .on("tick", tick)
+    .start();
+    
+//tool tip 
+var tooltip = d3.select("body")
+  .append("div")
+  .style("position", "absolute")
+  .style("z-index", "10")
+  .style("visibility", "hidden")
+  .style("width", "60px")		
+  .style("height", "28px")
+  .style("padding", "2px")					
+  .style("font", "20px sans-serif")	
+  .style("background", "orange")
+  .style("border", "0px")
+  .style("border-radius", "8px")
+  .text("a simple tooltip");
+
+
+
+  
+//console.log(force.nodes());
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+svg.append("defs").selectAll("marker")
+    .data(["end"])
+  .enter().append("svg:marker")
+    .attr("id", String)
+    .attr("viewBox", "0 -5 10 10")
+    .attr("refX", 15)
+    .attr("refY", -1.5)
+    .attr("markerWidth", 6)
+    .attr("markerHeight", 6)
+    .attr("orient", "auto")
+  .append("svg:path")
+    .attr("d", "M0,-5L10,0L0,5");
+
+
+var path = svg.append("g").selectAll("path")
+    .data(force.links())
+  .enter().append("svg:path")
+    .attr("class", function(d) { return "link " + d.type; })
+    .attr("marker-end", "url(#end)");
+path.on("mouseover", function(d) {
+	//console.log(d.fscore);
+    tooltip.text(d.fscore);
+    return tooltip.style("visibility", "visible");
+  })
+  .on("mousemove", function(d) {
+  tooltip.text(d.fscore + "-" + d.sscore);
+    return tooltip.style("top",
+      (d3.event.pageY - 10) + "px").style("left", (d3.event.pageX + 10) + "px");
+  })
+  .on("mouseout", function() {
+    return tooltip.style("visibility", "hidden");
+  });  
+
+
+var circle = svg.append("g").selectAll("circle")
+    .data(force.nodes())
+  .enter().append("circle")
+  .attr("id",function(d){return d.name;})
+  	.style("fill", function(d,i) { return color(i); })
+    .attr("r", 10)
+    .call(force.drag);  
+    
+
+	
+var text = svg.append("g").selectAll("text")
+    .data(force.nodes())
+  .enter().append("text")
+    .attr("x", 8)
+    .attr("y", ".31em")
+    .text(function(d) { return d.name; });
+var attrName,colorValueTarget=[],colorValueSource=[];
+function tick() {
+  path.attr("d", function(d,i){
+	  var dx = d.target.x - d.source.x,
+      dy = d.target.y - d.source.y,
+      dr = 75/d.linknum;
+  if(d.fscore>d.sscore) {
+	  attrName = d.source.name;
+	  colorValueSource[i]=colorObject[attrName];
+	  //console.log(attrName+"      "+colorValueSource[i]);
+  	return "M" + (d.target.x - 4) + "," + (d.target.y - 4) + "A" + dr + "," + dr + " 0 0,1 " + (d.source.x + 4) + "," + (d.source.y + 4);
+  }else{
+	  attrName = d.target.name;
+	  colorValueTarget[i]=colorObject[attrName];
+	  //console.log(attrName+"      "+colorValueTarget[i]);
+	return "M" + (d.source.x + 4) + "," + (d.source.y + 4) + "A" + dr + "," + dr + " 0 0,1 " + (d.target.x - 4) + "," + (d.target.y - 4);
+  }
+  })
+  .style("stroke",function(d,i){
+	  if(d.fscore>d.sscore) {
+		  return colorValueSource[i];
+	  }else{
+		 return colorValueTarget[i];
+	  }
+	  })
+  .attr("stroke-width", function(d,i)
+		  {
+	  if(d.fgroup == d.sgroup)
+		  {
+		  return "0.5px";
+		  }
+	  else
+		  {
+		  return "2.5px";
+		  }
+		  });
+  circle.attr("transform", transform);
+  text.attr("transform", transform);
+}
+
+
+
+
+
+function transform(d) {
+  return "translate(" + d.x + "," + d.y + ")";
+}
+
+function click() {
+    d3.select(this).select("text").transition()
+        .duration(750)
+        .attr("x", 22)
+        .style("fill", "steelblue")
+        .style("stroke", "lightsteelblue")
+        .style("stroke-width", ".5px")
+        .style("font", "20px sans-serif");
+    d3.select(this).select("circle").transition()
+        .duration(750)
+        .attr("r", 16)
+        .style("fill", "lightsteelblue");
+}
+
+
 </script>
-</body>
-</html>

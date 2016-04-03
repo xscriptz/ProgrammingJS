@@ -6,6 +6,7 @@
 .link {
   fill: none;
   stroke: #666;
+  stroke-width: 1.5px;
 }
 
 #licensing {
@@ -22,7 +23,7 @@
 
 circle {
   fill: #ccc;
-  stroke: #AED6F1;
+  stroke: #333;
   stroke-width: 1.5px;
 }
 
@@ -185,8 +186,6 @@ links.forEach(function(link,i) {
   link.source = nodes[link.source] || (nodes[link.source] = {name: link.source});
   link.target = nodes[link.target] || (nodes[link.target] = {name: link.target});
 });
-
-
 var force = d3.layout.force()
     .nodes(d3.values(nodes))
     .links(links)
@@ -243,6 +242,13 @@ path.on("mouseover", function(d) {
     tooltip.text(d.fscore);
     return tooltip.style("visibility", "visible");
   })
+    .style("stroke-dasharray", function(d, i)
+		  {
+	  if(d.fscore < d.sscore)
+		  {
+		  return "4,4";
+		  }
+  })
   .on("mousemove", function(d) {
   tooltip.text(d.fscore + "-" + d.sscore);
     return tooltip.style("top",
@@ -294,17 +300,7 @@ function tick() {
 		 return colorValueTarget[i];
 	  }
 	  })
-  .attr("stroke-width", function(d,i)
-		  {
-	  if(d.fgroup == d.sgroup)
-		  {
-		  return "0.5px";
-		  }
-	  else
-		  {
-		  return "2.5px";
-		  }
-		  });
+  .attr("stroke-width",1.5);
   circle.attr("transform", transform);
   text.attr("transform", transform);
 }
